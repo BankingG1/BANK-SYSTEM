@@ -20,3 +20,35 @@ def save():
             "balance": balance,
             "transactions": transactions
         }, f, indent=4)
+def update():
+    balance_label.config(text=f"Balance: ₱{balance}")
+
+    history.delete(0, tk.END)
+
+    for item in transactions:
+        history.insert(tk.END, item)
+
+def deposit():
+    global balance
+
+    try:
+        amount = float(entry.get())
+
+        if amount <= 0:
+            raise ValueError
+
+        balance += amount
+
+        transactions.append(
+            f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - Deposited ₱{amount}"
+        )
+
+        save()
+        update()
+
+        messagebox.showinfo("Success", "Deposit Successful")
+
+        entry.delete(0, tk.END)
+
+    except:
+        messagebox.showerror("Error", "Enter valid amount")
