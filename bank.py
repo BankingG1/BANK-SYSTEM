@@ -92,3 +92,51 @@ tk.Label(
     bg="lightblue"
 ).pack(pady=10)
 
+balance_label = tk.Label(
+    window,
+    text="Balance: ₱0",
+    font=("Arial", 15),
+    bg="lightblue",
+    fg="green"
+)
+
+balance_label.pack(pady=5)
+
+# Entry
+entry = tk.Entry(window, font=("Arial", 12), width=25)
+
+entry.pack(pady=10)
+
+# Buttons
+tk.Button(
+    window,
+    text="Deposit",
+    width=15,
+    bg="green",
+    fg="white",
+    command=deposit
+).pack(pady=5)
+
+tk.Button(
+    window,
+    text="Withdraw",
+    width=15,
+    bg="red",
+    fg="white",
+    command=withdraw
+).pack(pady=5)
+
+tk.Button(
+    window,
+    text="Check Balance",
+    width=15,
+    bg="blue",
+    fg="white",
+    command=lambda:
+    messagebox.showinfo(
+        "Balance",
+        f"Current Balance: ₱{balance}"
+    )
+).pack(pady=5)
+
+
