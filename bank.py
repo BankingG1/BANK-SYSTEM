@@ -84,7 +84,6 @@ window.title("Banking System")
 window.geometry("600x500")
 window.config(bg="lightblue")
 
-# Title
 tk.Label(
     window,
     text="GUI Banking System",
