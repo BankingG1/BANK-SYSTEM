@@ -52,3 +52,43 @@ def deposit():
 
     except:
         messagebox.showerror("Error", "Enter valid amount")
+
+def withdraw():
+    global balance
+
+    try:
+        amount = float(entry.get())
+
+        if amount <= 0 or amount > balance:
+            raise ValueError
+
+        balance -= amount
+
+        transactions.append(
+            f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - Withdrew ₱{amount}"
+        )
+
+        save()
+        update()
+
+        messagebox.showinfo("Success", "Withdrawal Successful")
+
+        entry.delete(0, tk.END)
+
+    except:
+        messagebox.showerror("Error", "Invalid or insufficient balance")
+
+window = tk.Tk()
+
+window.title("Banking System")
+window.geometry("600x500")
+window.config(bg="lightblue")
+
+# Title
+tk.Label(
+    window,
+    text="GUI Banking System",
+    font=("Arial", 20, "bold"),
+    bg="lightblue"
+).pack(pady=10)
+
