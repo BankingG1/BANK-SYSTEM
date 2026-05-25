@@ -136,4 +136,21 @@ tk.Button(
     )
 ).pack(pady=5)
 
+tk.Label(
+    window,
+    text="Transaction History",
+    font=("Arial", 14, "bold"),
+    bg="lightblue"
+).pack(pady=10)
+
+history = tk.Listbox(window, width=70, height=15)
+
+history.pack()
+
+update()
+
+window.mainloop()
+tk.tk
+tk.tk
+
 
