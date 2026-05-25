@@ -102,12 +102,10 @@ balance_label = tk.Label(
 
 balance_label.pack(pady=5)
 
-# Entry
 entry = tk.Entry(window, font=("Arial", 12), width=25)
 
 entry.pack(pady=10)
 
-# Buttons
 tk.Button(
     window,
     text="Deposit",
